@@ -19,6 +19,33 @@ function handleChange(changes: object, areaName: string){
     }
 }
 
+function getTLD(): string | null {
+    let language = window.navigator.language;
+
+    switch(language){
+        case "en-GB": return ".co.uk";
+        case "en-US": return ".com";
+        case "en-AU": return ".au";
+        case "en-CA": return ".ca";
+        case "nl-NL": return ".nl";
+        case "it-IT": return ".it";
+        case "de-DE": return ".de";
+        case "fr-FR": return ".fr";
+        case "ja":    return ".co.jp";
+        case "es-ES": return ".es";
+        case "es-PR": return ".com";
+        case "es-MX": return ".mx";
+        case "pt-BR": return ".br";
+        case "en-IN": return ".in";
+        case "zh-CN": return ".cn";
+        case "zh-TW": return ".cn";
+        case "zh-CN": return ".cn";
+        case "zh-HK": return ".cn";
+        case "zh-yue": return ".cn";
+        default: return null;
+    }
+}
+
 function init(){
     browser.runtime.sendMessage("showAction");
     
@@ -38,7 +65,7 @@ function init(){
 
         }
         else {
-            main(false, ".com");
+            main(false, getTLD() || ".com");
         }
     });
 }
