@@ -1,0 +1,38 @@
+{
+    "manifest_version": 2,
+    "name": "Redirector for Amazon",
+    "version": "1.0",
+  
+    "description": "Adds a red border to all webpages matching mozilla.org.",
+
+    "permissions": [
+      "tabs",
+      "storage"
+    ],
+
+    "icons": {
+      "48": "icons/icon.svg",
+      "96": "icons/icon.svg"
+    },
+  
+    "content_scripts": [
+      {
+        "matches":        ["http://*/*", "https://*/*"],
+        "include_globs":  ["http://*.amazon.*/*", "https://*.amazon.*/*"],
+        "js": ["redirect.js"],
+        "run_at": "document_start"
+      }
+    ],
+
+    "background": {
+      "scripts": ["background.js"]
+    },
+
+    "page_action": {
+      "default_icon": "icons/icon.svg",
+      "default_title": "Redirector",
+      "default_popup": "popups/settings.html",
+      "browser_style": true
+    }
+  
+}

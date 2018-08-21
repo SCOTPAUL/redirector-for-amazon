@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    // You have to explicitly set @types to get DefinitelyTyped type definitions
+    "typeRoots": ["node_modules/@types", "node_modules/web-ext-types"],
+    "target": "ES6"
+  },
+  "files":[
+      "redirect.ts",
+      "background.ts",
+      "popups/settings.ts"
+  ]
+}

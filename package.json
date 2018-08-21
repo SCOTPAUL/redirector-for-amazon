@@ -1,0 +1,11 @@
+{
+  "name": "redirector-for-amazon",
+  "version": "1.0.0",
+  "description": "Firefox WebExtension for automatically redirecting users to their country's Amazon domain.",
+  "dependencies": {
+    "web-ext-types": "^2.1.0"
+  },
+  "devDependencies": {},
+  "author": "Paul Cowie",
+  "license": "GPL-3.0-or-later"
+}

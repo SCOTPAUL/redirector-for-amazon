@@ -1,0 +1,11 @@
+button {
+    text-align: center;
+}
+
+.setting label {
+    float: left;
+}
+
+.setting select {
+    float: right;
+}
